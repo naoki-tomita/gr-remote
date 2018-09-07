@@ -5,7 +5,4 @@ import { App } from "./components/App";
 import { init } from "./utils/ServiceWorker";
 
 init();
-render(
-  <App />,
-  document.getElementById("app"),
-);
+render(<App />, document.getElementById("app"));

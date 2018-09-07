@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("self.addEventListener(\"fetch\", function (event) {\n    event.respondWith(caches.match(event.request)\n        .then(function (response) {\n        if (response) {\n            return response;\n        }\n        return fetch(event.request);\n    }));\n});\nvar CacheDataList = [\n    \"/\",\n    \"index.html\",\n    \"main.js\",\n];\nself.addEventListener(\"install\", function (event) {\n    event.waitUntil(caches.open(\"app-cache\")\n        .then(function (cache) {\n        return cache.addAll(CacheDataList);\n    }));\n});\nself.addEventListener(\"activate\", function () {\n    clients.claim();\n});\n\n\n//# sourceURL=webpack:///./src/scripts/serviceworker/index.ts?");
+eval("self.addEventListener(\"fetch\", function (event) {\n    event.respondWith(caches.match(event.request).then(function (response) {\n        if (response) {\n            return response;\n        }\n        return fetch(event.request);\n    }));\n});\nvar CacheDataList = [\"/\", \"index.html\", \"main.js\"];\nself.addEventListener(\"install\", function (event) {\n    event.waitUntil(caches.open(\"app-cache\").then(function (cache) {\n        return cache.addAll(CacheDataList);\n    }));\n});\nself.addEventListener(\"activate\", function () {\n    clients.claim();\n});\n\n\n//# sourceURL=webpack:///./src/scripts/serviceworker/index.ts?");
 
 /***/ })
 
