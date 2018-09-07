@@ -3,13 +3,13 @@ import { BrowserRouter, Route } from "react-router-dom";
 import { Shoots } from "./Shoots";
 import { Images } from "./Images";
 import { Settings } from "./Settings";
-import { Menu } from "./Menu";
+import { MenuComponents } from "./MenuComponents";
 
 export const App: React.StatelessComponent = () => {
   return (
     <BrowserRouter>
       <div>
-        <Menu
+        <MenuComponents
           linkLists={[
             { href: "/", label: "Shoots" },
             { href: "/images", label: "Images" },

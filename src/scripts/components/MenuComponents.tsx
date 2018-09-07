@@ -1,9 +1,12 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
-import { AppBar, Toolbar, IconButton, ListItem } from "@material-ui/core";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import IconButton from "@material-ui/core/IconButton";
+import ListItem from "@material-ui/core/ListItem";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import MenuIcon from "@material-ui/icons/Menu";
-import { state, onUpdate } from "../models/States";
+import { menu } from "../models/States/Menu";
 
 interface Props {
   linkLists: Array<{
@@ -12,9 +15,9 @@ interface Props {
   }>;
 }
 
-export class Menu extends React.Component<Props> {
+export class MenuComponents extends React.Component<Props> {
   componentDidMount() {
-    onUpdate(["drawerOpen"], () => this.forceUpdate());
+    menu.on("drawerOpen", () => this.forceUpdate());
   }
   render() {
     return (
@@ -31,7 +34,7 @@ export class Menu extends React.Component<Props> {
           </Toolbar>
         </AppBar>
         <SwipeableDrawer
-          open={state.drawerOpen}
+          open={menu.drawerOpen}
           onClose={this.handleClose}
           onOpen={this.handleOpen}
         >
@@ -52,10 +55,10 @@ export class Menu extends React.Component<Props> {
   };
 
   handleOpen = () => {
-    state.drawerOpen = true;
+    menu.drawerOpen = true;
   };
 
   handleClose = () => {
-    state.drawerOpen = false;
+    menu.drawerOpen = false;
   };
 }
