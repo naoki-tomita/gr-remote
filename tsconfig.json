@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "sourceMap": true,
+    "jsx": "react",
+    "strictNullChecks": true,
+    "lib": ["es2017", "dom"]
+  },
+  "compileOnSave": false,
+  "exclude": ["node_modules"]
+}

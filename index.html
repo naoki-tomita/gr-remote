@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html manifest="gr-remote.appcache">
+<head>
+	<meta charset="utf-8">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="google" value="notranslate">
+	<meta name="robots" content="none">
+	<title>GR Remote</title>
+	<link rel="shortcut icon" href="img/favicon.ico">
+	<link rel="apple-touch-icon" href="img/icon.png">
+	<link rel="stylesheet" href="./external/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css">
+	<link rel="stylesheet" href="./external/font-awesome-4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="./external/photoswipe-4.0.6/dist/photoswipe.css">
+	<link rel="stylesheet" href="./external/photoswipe-4.0.6/dist/default-skin/default-skin.gr.css">
+	<link rel="stylesheet" href="./external/fonts.googleapis.com/opensans.css">
+	<link rel="stylesheet" href="./gr/css/grist.css">
+	<link rel="stylesheet" href="css/gr-remote.css">
+	<!--[if !IE]><!-->
+	<script src="./external/jquery-2.1.3/jquery-2.1.3.min.js"></script>
+	<script src="./external/photoswipe-4.0.6/dist/photoswipe.gr.min.js"></script>
+	<script src="./external/photoswipe-4.0.6/dist/photoswipe-ui-default.gr.js"></script>
+	<script src="./gr/js/grist.js"></script>
+	<script src="./gr/js/grist.m.js"></script>
+	<script src="./gr/js/gr-app.js"></script>
+	<script src="js/gr-remote.js"></script>
+	<script src="js/gr-demo.js"></script>
+	<script src="js/gr-extension.js"></script>
+	<script src="./external/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<!--<![endif]-->
+	<noscript>
+		<meta http-equiv="refresh" content="0; URL=./gr/disabled.html">
+	</noscript>
+	<!--[if IE]>
+	<meta http-equiv="refresh" content="0; URL=./gr/disabled.html">
+	<![endif]-->
+<script type="text/javascript" src="/common/js/ga.js"></script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W8M2JMG');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42643694-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-42643694-1');
+</script>
+</head>
+<body class="gr">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8M2JMG" 
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!--[if !IE]><!-->
+
+<div data-role="panel" id="gr-menu" data-position="left" data-display="overlay" data-position-fixed="true" data-theme="b">
+	<div id="gr-menuheader" data-rel="close">
+		<h2><img src="img/logo.png" alt="GR"></h2>
+		<p id="gr-phrase">GR <strong>Remote</strong> will be your new partner.</p>
+	</div>
+	<ul data-role="listview" class="gr-not-on-mini">
+		<li><a href="#gr-home"><i class="fa fa-camera fa-fw"></i> Commander</a></li>
+		<li><a href="#gr-viewer"><i class="fa fa-youtube-play fa-fw"></i> Viewer</a></li>
+		<li><a href="#gr-presets"><i class="fa fa-star fa-fw"></i> Presets</a></li>
+		<li><a href="#gr-utils"><i class="fa fa-briefcase fa-fw"></i> Utilities</a></li>
+		<li><a href="#gr-config"><i class="fa fa-cog fa-fw"></i> Configuration</a></li>
+		<li><a href="#gr-about"><i class="fa fa-info-circle fa-fw"></i> About</a></li>
+		<li data-role="list-divider">GR...</li>
+		<li data-icon="false"><a href="#" data-rel="close" data-gr="post=device/finish" class="gr-power"><i class="fa fa-power-off fa-fw"></i> Power Off</a></li>
+		<li class="gr-on-develop" data-role="list-divider">FOR GR APP DEVELOPERS</li>
+		<li class="gr-on-develop"><a href="#gr-develop"><i class="fa fa-wrench fa-fw"></i> Develop</a></li>
+		<li class="gr-on-develop"><a href="#gr-reference"><i class="fa fa-lightbulb-o fa-fw"></i> Reference</a></li>
+	</ul>
+	<ul data-role="listview" class="gr-on-mini">
+		<li><a href="#gr-viewer"><i class="fa fa-youtube-play fa-fw"></i> Viewer</a></li>
+		<li><a href="#gr-utils"><i class="fa fa-briefcase fa-fw"></i> Utilities</a></li>
+		<li><a href="#gr-config"><i class="fa fa-cog fa-fw"></i> Configuration</a></li>
+		<li data-role="list-divider">GR...</li>
+		<li data-icon="false"><a data-rel="close" data-gr="post=device/finish" class="gr-power"><i class="fa fa-power-off fa-fw"></i> Power Off</a></li>
+		<li class="gr-on-develop" data-role="list-divider">For GR App Developers</li>
+		<li class="gr-on-develop"><a href="#gr-develop"><i class="fa fa-wrench fa-fw"></i> Develop</a></li>
+		<li class="gr-on-develop"><a href="#gr-reference"><i class="fa fa-lightbulb-o fa-fw"></i> Reference</a></li>
+	</ul>
+</div><!-- /panel gr-menu -->
+
+<div data-role="panel" id="gr-quickview" class="gr-panel gr-panel-center" data-position="right" data-display="reveal" data-position-fixed="true" data-theme="b" data-gr-navbar-page="0">
+	<div class="gr-quickview-header gr-not-on-select">
+		<h3>Quickview</h3>
+		<div data-role="navbar" id="gr-quickview-navbar" class="gr-navbar">
+			<ul>
+				<li><a class="ui-btn-active">Latest</a></li>
+				<li><a>Recent</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="gr-quickview-header gr-on-select">
+		<h3 id="gr-download-title">Download</h3>
+		<p>Tap image to download.</p>
+	</div>
+
+	<div class="gr-quick-holder" data-gr-navbar-page="0">
+		<ul id="gr-quick-single" class="gr-gallery">
+			<li><a href="fallback/DCIM/100RICOH/R0000001.JPG" title="R0000001.JPG" class="gr-imgbox"><img src="fallback/DCIM/100RICOH/R0000001.JPG" alt="R0000001.JPG"></a>
+		</ul>
+	</div>
+	<div class="gr-quick-holder" data-gr-navbar-page="1">
+		<ul id="gr-quick-multi" class="gr-gallery">
+			<li><a href="fallback/DCIM/100RICOH/R0000001.JPG" title="R0000001.JPG" class="gr-imgbox"><img src="fallback/DCIM/100RICOH/R0000001.JPG" alt="R0000001.JPG"></a>
+			<li><a href="fallback/DCIM/100RICOH/R0000001.JPG" title="R0000002.JPG" class="gr-imgbox"><img src="fallback/DCIM/100RICOH/R0000001.JPG" alt="R0000002.JPG"></a>
+			<li><a href="fallback/DCIM/100RICOH/R0000001.JPG" title="R0000003.JPG" class="gr-imgbox"><img src="fallback/DCIM/100RICOH/R0000001.JPG" alt="R0000003.JPG"></a>
+			<li><a href="fallback/DCIM/100RICOH/R0000001.JPG" title="R0000004.JPG" class="gr-imgbox"><img src="fallback/DCIM/100RICOH/R0000001.JPG" alt="R0000004.JPG"></a>
+			<li><a href="fallback/DCIM/100RICOH/R0000001.JPG" title="R0000005.JPG" class="gr-imgbox"><img src="fallback/DCIM/100RICOH/R0000001.JPG" alt="R0000005.JPG"></a>
+			<li><a href="fallback/DCIM/100RICOH/R0000001.JPG" title="R0000006.JPG" class="gr-imgbox"><img src="fallback/DCIM/100RICOH/R0000001.JPG" alt="R0000006.JPG"></a>
+			<li><a href="fallback/DCIM/100RICOH/R0000001.JPG" title="R0000007.JPG" class="gr-imgbox"><img src="fallback/DCIM/100RICOH/R0000001.JPG" alt="R0000007.JPG"></a>
+			<li><a href="fallback/DCIM/100RICOH/R0000001.JPG" title="R0000008.JPG" class="gr-imgbox"><img src="fallback/DCIM/100RICOH/R0000001.JPG" alt="R0000008.JPG"></a>
+			<li><a href="fallback/DCIM/100RICOH/R0000001.JPG" title="R0000009.JPG" class="gr-imgbox"><img src="fallback/DCIM/100RICOH/R0000001.JPG" alt="R0000009.JPG"></a>
+		</ul>
+	</div>
+	<a href="#" class="ui-btn ui-corner-all gr-act-download" target="_blank" data-gr-download-size="view">Download VGA</a>
+	<a href="#" class="ui-btn ui-corner-all gr-act-download" target="_blank" data-gr-download-size="full">Download Original</a>
+	<p data-gr-download-size></p>
+	<div class="gr-not-on-select">
+		<a href="#" class="ui-btn ui-corner-all gr-cancel" data-rel="close">Close</a>
+	</div>
+
+</div><!-- /panel gr-quickview -->
+
+<!-- Start of page: #gr-home -->
+<div data-role="page" id="gr-home" class="gr-page gr-page-center gr-theme" data-title="GR Remote">
+
+	<div data-role="header">
+		<h1><i class="fa fa-camera"></i> Commander</h1>
+		<a href="#gr-menu" class="ui-btn-left ui-btn ui-corner-all ui-btn-icon-notext ui-icon-bars">Menu</a>
+		<div class="ui-btn-right gr-controlgroup">
+			<!-- @todo a href="#" class="ui-btn ui-corner-all gr-fa-icon-notext gr-flip gr-on-develop"><i class="fa fa-user fa-fw fa-lg"></i></a -->
+			<a href="#" class="ui-btn ui-corner-all ui-btn-icon-notext ui-icon-user gr-toggle-btn gr-flip">Flip</a>
+			<a href="#" class="ui-btn ui-corner-all ui-btn-icon-notext ui-icon-refresh gr-refresh">Refresh</a>
+		</div>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+
+		<div id="gr-view-container">
+			<div id="gr-view">
+				<!-- @todo サイズ確定早期化 -->
+				<!-- img src="img/viewfinder.png" -->
+				<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUAAAADwAQMAAABL4y8oAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAACBJREFUaN7twYEAAAAAw6D7U19hANUAAAAAAAAAAAAgOCZwAAHnU0kUAAAAAElFTkSuQmCC">
+			</div>
+		</div>
+
+		<div id="gr-control-container">
+
+			<div id="gr-control-navbar" data-role="navbar" class="gr-navbar">
+				<ul>
+					<li><a data-gr-control-page="1"><i class="fa fa-sliders fa-lg"></i></a></li>
+					<li><a class="ui-btn-active" data-gr-control-page="2"><i class="fa fa-camera fa-lg"></i></a></li>
+					<li><a data-gr-control-page="3"><i class="fa fa-arrows fa-lg"></i></a></li>
+				</ul>
+			</div>
+
+			<div id="gr-control">
+
+				<div class="gr-cpanel" data-gr-control-page="1" style="display: none;">
+<div class="ui-grid-c">
+	<div class="ui-block-a"><a class="ui-btn ui-corner-all ui-mini ui-btn-icon-top gr-keep-focus gr-keep-shutter" data-gr="cmd=audio resplay 0 1 3">Beep<span class="gr-cpanel-icon"><i class="fa fa-bell-o fa-fw"></i></span></a></div>
+	<div class="ui-block-b"><a class="ui-btn ui-corner-all ui-mini ui-btn-icon-top gr-key gr-key-dial gr-keep-focus gr-keep-shutter" data-gr="cmd=bjogleft">Dial-L<span class="gr-cpanel-icon"><i class="fa fa-arrow-left fa-fw"></i></span></a></div>
+	<div class="ui-block-c"><a class="ui-btn ui-corner-all ui-mini ui-btn-icon-top gr-key gr-key-dial gr-keep-focus gr-keep-shutter" data-gr="cmd=bjogright">Dial-R<span class="gr-cpanel-icon"><i class="fa fa-arrow-right fa-fw"></i></span></a></div>
+	<div class="ui-block-d"><a id="gr-shutter-hold" class="ui-btn ui-corner-all ui-mini ui-btn-icon-top gr-keep-focus" data-gr="cmd=brl 2 1">Shutter+<span class="gr-cpanel-icon"><i class="fa fa-circle fa-fw"></i></span></a></div>
+	<div class="ui-block-a"><a class="ui-btn ui-corner-all ui-mini ui-btn-icon-top gr-toggle-btn gr-keep-focus gr-keep-shutter" data-gr-on="cmd=led on 1" data-gr-off="cmd=led off 1">Light<span class="gr-cpanel-icon"><i class="fa fa-sun-o fa-fw"></i></span></a></div>
+	<div class="ui-block-b"><a class="ui-btn ui-corner-all ui-mini ui-btn-icon-top gr-key gr-keep-focus gr-keep-shutter" data-gr="cmd=badjleft">ADJ-L<span class="gr-cpanel-icon"><i class="fa fa-backward fa-fw"></i></span></a></div>
+	<div class="ui-block-c"><a class="ui-btn ui-corner-all ui-mini ui-btn-icon-top gr-key gr-keep-focus gr-keep-shutter" data-gr="cmd=badjright">ADJ-R<span class="gr-cpanel-icon"><i class="fa fa-forward fa-fw"></i></span></a></div>
+	<div class="ui-block-d"><a class="ui-btn ui-corner-all ui-mini ui-btn-icon-top" data-gr="cmd=badjok">ADJ-OK<span class="gr-cpanel-icon"><i class="fa fa-caret-square-o-down fa-fw"></i></span></a></div>
+</div>
+<div class="ui-grid-b">
+	<div class="ui-block-a">
+		<label>AF Lever</label>
+		<select data-role="slider" id="gr-aflever" data-mini="true" class="gr-select gr-keep-focus gr-keep-shutter gr-slider-no-active">
+			<option data-gr="cmd=bafl">AFL</option>
+			<option data-gr="cmd=bafc">C-AF</option>
+		</select>
+	</div>
+	<div class="ui-block-b">
+		<label>Display</label>
+		<select data-role="slider" data-mini="true" class="gr-select gr-keep-focus gr-keep-shutter">
+			<option data-gr="cmd=lcd sleep off">On</option>
+			<option data-gr="cmd=lcd sleep on">Sleep</option>
+		</select>
+	</div>
+	<div class="ui-block-c">
+		<label>Sounds</label>
+		<select data-role="slider" data-mini="true" class="gr-select gr-keep-focus gr-keep-shutter">
+			<option data-gr="cmd=audio mute off">On</option>
+			<option data-gr="cmd=audio mute on">Mute</option>
+		</select>
+	</div>
+</div>
+				</div>
+
+				<div class="gr-cpanel" data-gr-control-page="3" style="display: none;">
+<div class="ui-grid-c">
+	<div class="ui-block-a"><a class="ui-btn ui-corner-all ui-mini ui-btn-icon-top gr-key gr-keep-shutter" data-gr="cmd=btele">Z-In<span class="gr-cpanel-icon"><i class="fa fa-plus-square-o fa-fw"></i></span></a></div>
+	<div class="ui-block-b"><a class="ui-btn ui-corner-all ui-mini ui-btn-icon-top gr-toggle-btn gr-keep-focus gr-keep-shutter" data-gr-on="cmd=baf 1" data-gr-off="cmd=baf 0">AE/AF<span class="gr-cpanel-icon"><i class="fa fa-asterisk fa-fw"></i></span></a></div>
+	<div class="ui-block-c"><a class="ui-btn ui-corner-all ui-mini ui-btn-icon-top gr-key" data-gr="cmd=bup">Macro<span class="gr-cpanel-icon"><i class="fa fa-chevron-up fa-fw"></i></span></a></div>
+	<div class="ui-block-d"><a class="ui-btn ui-corner-all ui-mini ui-btn-icon-top" data-gr="cmd=bplay">Play<span class="gr-cpanel-icon"><i class="fa fa-play fa-fw"></i></span></a></div>
+	<div class="ui-block-a"><a class="ui-btn ui-corner-all ui-mini ui-btn-icon-top gr-key gr-keep-shutter" data-gr="cmd=bwide">Z-Out<span class="gr-cpanel-icon"><i class="fa fa-minus-square-o fa-fw"></i></span></a></div>
+	<div class="ui-block-b"><a class="ui-btn ui-corner-all ui-mini ui-btn-icon-top gr-key" data-gr="cmd=bleft">Fn1<span class="gr-cpanel-icon"><i class="fa fa-chevron-left fa-fw"></i></span></a></div>
+	<div class="ui-block-c"><a class="ui-btn ui-corner-all ui-mini ui-btn-icon-top" data-gr="cmd=bok">OK<span class="gr-cpanel-icon"><i class="fa fa-list fa-fw"></i></span></a></div>
+	<div class="ui-block-d"><a class="ui-btn ui-corner-all ui-mini ui-btn-icon-top gr-key" data-gr="cmd=bright">Flash<span class="gr-cpanel-icon"><i class="fa fa-chevron-right fa-fw"></i></span></a></div>
+	<div class="ui-block-a"><a class="ui-btn ui-corner-all ui-mini ui-btn-icon-top" data-gr="cmd=beffect">Effect<span class="gr-cpanel-icon"><i class="fa fa-angle-double-right fa-fw"></i></span></a></div>
+	<div class="ui-block-b"><a class="ui-btn ui-corner-all ui-mini ui-btn-icon-top" data-gr="cmd=btrash">Fn2<span class="gr-cpanel-icon"><i class="fa fa-trash fa-fw"></i></span></a></div>
+	<div class="ui-block-c"><a class="ui-btn ui-corner-all ui-mini ui-btn-icon-top gr-key" data-gr="cmd=bdown">WB<span class="gr-cpanel-icon"><i class="fa fa-chevron-down fa-fw"></i></span></a></div>
+	<div class="ui-block-d"><a class="ui-btn ui-corner-all ui-mini ui-btn-icon-top" data-gr="cmd=bdisp">Disp<span class="gr-cpanel-icon"><i class="fa fa-undo fa-fw"></i></span></a></div>
+</div>
+				</div>
+
+				<div class="gr-cpanel" data-gr-control-page="2">
+<div class="ui-grid-b">
+	<div class="ui-block-a"><select data-icon="grid" data-iconpos="top" data-mini="true" class="gr-select">
+		<option class="gr-option-title">Mode</option>
+		<option data-gr="cmd=bdial M">M</option>
+		<option data-gr="cmd=bdial TAV">TAv</option>
+		<option data-gr="cmd=bdial TV">Tv</option>
+		<option data-gr="cmd=bdial AV">Av</option>
+		<option data-gr="cmd=bdial P">P</option>
+		<option data-gr="cmd=bdial AUTO">Auto</option>
+		<option data-gr="cmd=bdial MY1">MY1</option>
+		<option data-gr="cmd=bdial MY2">MY2</option>
+		<option data-gr="cmd=bdial MY3">MY3</option>
+		<option data-gr="cmd=bdial MOVIE">Movie</option>
+	</select></div>
+	<div class="ui-block-b"><a id="gr-focus" class="ui-btn ui-corner-all ui-mini ui-btn-icon-top gr-keep-focus gr-keep-shutter" data-gr>Focus<span class="gr-cpanel-icon"><i class="fa fa-dot-circle-o fa-fw"></i></span></a></div>
+	<div class="ui-block-c"><a id="gr-shutter" class="ui-btn ui-corner-all ui-mini ui-btn-icon-top gr-keep-focus gr-keep-shutter" data-gr>Shutter<span class="gr-cpanel-icon"><i class="fa fa-circle fa-fw"></i></span></a></div>
+	<div class="ui-block-a"><select data-icon="false" data-mini="true" class="gr-select">
+		<option class="gr-option-title" selected>F</option>
+		<option data-gr="put=params/camera?av=2.8&cmd=mode refresh">F 2.8</option>
+		<option data-gr="put=params/camera?av=4.0&cmd=mode refresh">F 4.0</option>
+		<option data-gr="put=params/camera?av=5.6&cmd=mode refresh">F 5.6</option>
+		<option data-gr="put=params/camera?av=8.0&cmd=mode refresh">F 8.0</option>
+		<option data-gr="put=params/camera?av=11&cmd=mode refresh">F 11</option>
+		<option data-gr="put=params/camera?av=16&cmd=mode refresh">F 16</option>
+	</select></div>
+	<div class="ui-block-b"><select data-icon="false" data-mini="true" class="gr-select">
+		<option data-gr="put=params/camera?tv=T&cmd=mode refresh">T</option>
+		<option data-gr="put=params/camera?tv=4.1&cmd=mode refresh">4S</option>
+		<option data-gr="put=params/camera?tv=2.1&cmd=mode refresh">2S</option>
+		<option data-gr="put=params/camera?tv=1.1&cmd=mode refresh">1S</option>
+		<option data-gr="put=params/camera?tv=1.2&cmd=mode refresh">1/2</option>
+		<option data-gr="put=params/camera?tv=1.4&cmd=mode refresh">1/4</option>
+		<option data-gr="put=params/camera?tv=1.8&cmd=mode refresh">1/8</option>
+		<option data-gr="put=params/camera?tv=1.15&cmd=mode refresh">1/15</option>
+		<option data-gr="put=params/camera?tv=1.30&cmd=mode refresh">1/30</option>
+		<option class="gr-option-title" selected>SS</option>
+		<option data-gr="put=params/camera?tv=1.60&cmd=mode refresh">1/60</option>
+		<option data-gr="put=params/camera?tv=1.125&cmd=mode refresh">1/125</option>
+		<option data-gr="put=params/camera?tv=1.250&cmd=mode refresh">1/250</option>
+		<option data-gr="put=params/camera?tv=1.500&cmd=mode refresh">1/500</option>
+		<option data-gr="put=params/camera?tv=1.1000&cmd=mode refresh">1/1000</option>
+		<option data-gr="put=params/camera?tv=1.2000&cmd=mode refresh">1/2000</option>
+	</select></div>
+	<div class="ui-block-c"><select data-icon="false" data-mini="true" class="gr-select">
+		<option data-gr="put=params/camera?xv=+3.0&cmd=mode refresh">EV +3.0</option>
+		<option data-gr="put=params/camera?xv=+2.7&cmd=mode refresh">EV +2.7</option>
+		<option data-gr="put=params/camera?xv=+2.3&cmd=mode refresh">EV +2.3</option>
+		<option data-gr="put=params/camera?xv=+2.0&cmd=mode refresh">EV +2.0</option>
+		<option data-gr="put=params/camera?xv=+1.7&cmd=mode refresh">EV +1.7</option>
+		<option data-gr="put=params/camera?xv=+1.3&cmd=mode refresh">EV +1.3</option>
+		<option data-gr="put=params/camera?xv=+1.0&cmd=mode refresh">EV +1.0</option>
+		<option data-gr="put=params/camera?xv=+0.7&cmd=mode refresh">EV +0.7</option>
+		<option data-gr="put=params/camera?xv=+0.3&cmd=mode refresh">EV +0.3</option>
+		<option class="gr-option-title" selected>EV</option>
+		<option data-gr="put=params/camera?xv=0.0&cmd=mode refresh">EV 0.0</option>
+		<option data-gr="put=params/camera?xv=-0.3&cmd=mode refresh">EV -0.3</option>
+		<option data-gr="put=params/camera?xv=-0.7&cmd=mode refresh">EV -0.7</option>
+		<option data-gr="put=params/camera?xv=-1.0&cmd=mode refresh">EV -1.0</option>
+		<option data-gr="put=params/camera?xv=-1.3&cmd=mode refresh">EV -1.3</option>
+		<option data-gr="put=params/camera?xv=-1.7&cmd=mode refresh">EV -1.7</option>
+		<option data-gr="put=params/camera?xv=-2.0&cmd=mode refresh">EV -2.0</option>
+		<option data-gr="put=params/camera?xv=-2.3&cmd=mode refresh">EV -2.3</option>
+		<option data-gr="put=params/camera?xv=-2.7&cmd=mode refresh">EV -2.7</option>
+		<option data-gr="put=params/camera?xv=-3.0&cmd=mode refresh">EV -3.0</option>
+	</select></div>
+</div>
+<div class="ui-grid-b">
+	<div class="ui-block-a">
+		<label>Selftimer</label>
+		<select data-role="slider" data-mini="true" class="gr-select">
+			<option data-gr="pset=SELFTIMER SELF_MODE_OFF&cmd=mode refresh">Off</option>
+			<option data-gr="pset=SELFTIMER SELF_MODE_2SEC&cmd=mode refresh">2 Sec</option>
+		</select>
+	</div>
+	<div class="ui-block-b">
+		<label>Lens Lock</label>
+		<select data-role="slider" id="gr-lenslock" data-mini="true" class="gr-select">
+			<option data-gr="pset=LENS_LOCK 0&cmd=acclock off">Off</option>
+			<option data-gr="pset=LENS_LOCK 1&cmd=acclock on">Lock</option>
+		</select>
+	</div>
+	<div class="ui-block-c">
+		<label>Key Lock</label>
+		<select data-role="slider" data-mini="true" class="gr-select gr-keep-focus gr-keep-shutter">
+			<option data-gr="cmd=uilock off">Off</option>
+			<option data-gr="cmd=uilock on">Lock</option>
+		</select>
+	</div>
+</div>
+				</div>
+
+			</div>
+			
+			<div id="gr-control-func" class="ui-grid-b gr-cpanel">
+				<div class="ui-block-a"><a href="#" class="ui-btn ui-corner-all ui-mini gr-sync"><i class="fa fa-wifi fa-lg"></i> Sync</a></div>
+				<div class="ui-block-b"><a href="#gr-advanced" class="ui-btn ui-corner-all ui-mini"><i class="fa fa-th-large fa-lg"></i> Settings</a></div>
+				<div class="ui-block-c"><a href="#gr-quickview" class="ui-btn ui-corner-all ui-mini"><i class="fa fa-play-circle fa-lg"></i> Quickview</a></div>
+			</div>
+
+		</div>
+
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<p class="gr-copyright-text"></p>
+	</div><!-- /footer -->
+
+	<div data-role="panel" id="gr-advanced" class="gr-panel gr-panel-center" data-position="right" data-display="push" data-position-fixed="true">
+		<a href="#" class="ui-btn-right ui-btn ui-corner-all ui-btn-icon-notext ui-icon-delete gr-reset">Clear</a>
+		<h3>Advanced Settings</h3>
+
+		<form id="gr-sets" name="shootSets" class="gr-form">
+			<div class="gr-cpanel gr-cpanel-large">
+<div class="ui-grid-b">
+	<div class="ui-block-a">
+		<label>ISO</label>
+		<select name="iso" data-icon="false" data-mini="true">
+			<option></option>
+			<option data-gr="put=params/camera?sv=auto">Auto</option>
+			<option data-gr="put=params/camera?sv=auto_hi">Auto-Hi</option>
+			<option data-gr="put=params/camera?sv=100">ISO 100</option>
+			<option data-gr="put=params/camera?sv=200">ISO 200</option>
+			<option data-gr="put=params/camera?sv=400">ISO 400</option>
+			<option data-gr="put=params/camera?sv=800">ISO 800</option>
+			<option data-gr="put=params/camera?sv=1600">ISO 1600</option>
+			<option data-gr="put=params/camera?sv=3200">ISO 3200</option>
+		</select>
+	</div>
+	<div class="ui-block-b">
+		<label>WB</label>
+		<select name="whiteBalance" data-icon="false" data-mini="true">
+			<option></option>
+			<option data-gr="pset=WB WB_MODE_AUTO">Auto</option>
+			<option data-gr="pset=WB WB_MODE_I_AUTO">MP Auto</option>
+			<option data-gr="pset=WB WB_MODE_DAYLIGHT">Outdoors</option>
+			<option data-gr="pset=WB WB_MODE_SHADE">Shade</option>
+			<option data-gr="pset=WB WB_MODE_CLOUDY">Cloudy</option>
+			<option data-gr="pset=WB WB_MODE_INCANDESCENT1">Incand 1</option>
+			<option data-gr="pset=WB WB_MODE_INCANDESCENT2">Incand 2</option>
+			<option data-gr="pset=WB WB_MODE_FLUORESCENT1">Day Fl</option>
+			<option data-gr="pset=WB WB_MODE_FLUORESCENT2">Neutral Fl</option>
+			<option data-gr="pset=WB WB_MODE_FLUORESCENT3">Cool Fl</option>
+			<option data-gr="pset=WB WB_MODE_FLUORESCENT4">Warm Fl</option>
+			<option data-gr="pset=WB WB_MODE_CTE">CTE</option>
+			<option data-gr="pset=WB WB_MODE_CUSTOM">Custom</option>
+			<option data-gr="pset=WB WB_MODE_MANUAL">Manual</option>
+		</select>
+	</div>
+	<div class="ui-block-c">
+		<label>Flash</label>
+		<select name="flash" data-icon="false" data-mini="true">
+			<option></option>
+			<option data-gr="pset=FLASH FLASH_MODE_AUTO">Auto</option>
+			<option data-gr="pset=FLASH FLASH_MODE_ON">On</option>
+			<option data-gr="pset=FLASH FLASH_MODE_SLOW_SYNC">Sync</option>
+			<option data-gr="pset=FLASH FLASH_MODE_MANUAL">Manual</option>
+			<option data-gr="pset=FLASH FLASH_MODE_REDEYE">Auto (RE)</option>
+			<option data-gr="pset=FLASH FLASH_MODE_REDEYE_ON">On (RE)</option>
+			<option data-gr="pset=FLASH FLASH_MODE_REDEYE_SLOW_SYNC">Sync (RE)</option>
+			<option data-gr="pset=FLASH FLASH_MODE_WIRELESS">Wireless</option>
+			<option data-gr="pset=FLASH FLASH_MODE_OFF">Off</option>
+		</select>
+	</div>
+	<div class="ui-block-a">
+		<label>Focus</label>
+		<select name="focus" data-icon="false" data-mini="true">
+			<option></option>
+			<option data-gr="pset=FOCUS FOCUS_MODE_MULTI">Multi</option>
+			<option data-gr="pset=FOCUS FOCUS_MODE_SPOT">Spot</option>
+			<option data-gr="pset=FOCUS FOCUS_MODE_PINPOINT">Pinpoint</option>
+			<option data-gr="pset=FOCUS FOCUS_MODE_TRACKING">Tracking</option>
+			<option data-gr="pset=FOCUS FOCUS_MODE_MANUAL">MF</option>
+			<option data-gr="pset=FOCUS FOCUS_MODE_SNAP">Snap</option>
+			<option data-gr="pset=FOCUS FOCUS_MODE_INFINITY">Infinity</option>
+		</select>
+	</div>
+	<div class="ui-block-b">
+		<label>Metering</label>
+		<select name="exposureMetering" data-icon="false" data-mini="true">
+			<option></option>
+			<option data-gr="pset=EXP_METERING METERING_MODE_MULTI">Multi</option>
+			<option data-gr="pset=EXP_METERING METERING_MODE_CENTER">Center</option>
+			<option data-gr="pset=EXP_METERING METERING_MODE_SPOT">Spot</option>
+		</select>
+	</div>
+	<div class="ui-block-c">
+		<label>BKT</label>
+		<select name="autoBracket" data-icon="false" data-mini="true">
+			<option></option>
+			<option data-gr="pset=AUTO_BKT CONT_MODE_SINGLE">Off</option>
+			<option data-gr="pset=AUTO_BKT CONT_MODE_BKT_AE_03">AEB 1/3</option>
+			<option data-gr="pset=AUTO_BKT CONT_MODE_BKT_AE">AEB 1/2</option>
+			<option data-gr="pset=AUTO_BKT CONT_MODE_BKT_WB">WBB</option>
+			<option data-gr="pset=AUTO_BKT CONT_MODE_BKT_WB_PRESET">WBB P</option>
+			<option data-gr="pset=AUTO_BKT CONT_MODE_BKT_EFX">Effect</option>
+			<option data-gr="pset=AUTO_BKT CONT_MODE_BKT_DR">DR</option>
+			<option data-gr="pset=AUTO_BKT CONT_MODE_BKT_CONTRAST">Contrast</option>
+		</select>
+	</div>
+	<div class="ui-block-a">
+		<label>Format</label>
+		<select name="pictureFormat" data-icon="false" data-mini="true">
+			<option></option>
+			<option data-gr="pset=PICT_SIZE PICT_SIZE_RAW&pset=PICT_QUALITY IMAGE_QUALITY_NO_COMPRESSION">RAW</option>
+			<option data-gr="pset=PICT_SIZE PICT_SIZE_RAW_JPEG&pset=PICT_QUALITY IMAGE_QUALITY_NO_COMPRESSION">RAW+</option>
+			<option data-gr="pset=PICT_SIZE PICT_SIZE_L&pset=PICT_QUALITY IMAGE_QUALITY_FINE">L</option>
+			<option data-gr="pset=PICT_SIZE PICT_SIZE_M&pset=PICT_QUALITY IMAGE_QUALITY_FINE">M</option>
+			<option data-gr="pset=PICT_SIZE PICT_SIZE_S&pset=PICT_QUALITY IMAGE_QUALITY_FINE">S</option>
+			<option data-gr="pset=PICT_SIZE PICT_SIZE_XS&pset=PICT_QUALITY IMAGE_QUALITY_FINE">XS</option>
+		</select>
+	</div>
+	<div class="ui-block-b">
+		<label>Aspect</label>
+		<select name="aspectRatio" data-icon="false" data-mini="true">
+			<option></option>
+			<option data-gr="pset=PICT_ASPECT ASPECT_3_2">3:2</option>
+			<option data-gr="pset=PICT_ASPECT ASPECT_4_3">4:3</option>
+			<option data-gr="pset=PICT_ASPECT ASPECT_1_1">1:1</option>
+		</select>
+	</div>
+	<div class="ui-block-c">
+		<label>Crop</label>
+		<select name="crop" data-icon="false" data-mini="true">
+			<option></option>
+			<option data-gr="pset=CROP_SHOOTING CROP_SIZE_ORIGINAL">Off</option>
+			<option data-gr="pset=CROP_SHOOTING CROP_SIZE_M">35mm</option>
+			<option data-gr="pset=CROP_SHOOTING CROP_SIZE_S">47mm</option>
+		</select>
+	</div>
+	<div class="ui-block-a">
+		<label>Effect</label>
+		<select name="effect" data-icon="false" data-mini="true">
+			<option></option>
+			<option data-gr="pset=EFFECT COLOR_MODE_STANDARD">Off</option>
+			<option data-gr="pset=EFFECT COLOR_MODE_BW">B&amp;W</option>
+			<option data-gr="pset=EFFECT COLOR_MODE_BW_TE">B&amp;W (TE)</option>
+			<option data-gr="pset=EFFECT COLOR_MODE_HIGH_BW">HC B&amp;W</option>
+			<option data-gr="pset=EFFECT COLOR_MODE_CROSS_PROCESS">X Process</option>
+			<option data-gr="pset=EFFECT COLOR_MODE_POSI_FILM">Posi Film</option>
+			<option data-gr="pset=EFFECT COLOR_MODE_BLEACH_BYPASS">Bl Bypass</option>
+			<option data-gr="pset=EFFECT COLOR_MODE_RETRO">Retro</option>
+			<option data-gr="pset=EFFECT COLOR_MODE_MINIATURE">Miniature</option>
+			<option data-gr="pset=EFFECT COLOR_MODE_SHIFT_CROP">Shift Crop</option>
+			<option data-gr="pset=EFFECT COLOR_MODE_HIGH_KEY">High Key</option>
+			<option data-gr="pset=EFFECT COLOR_MODE_HDR_TONE">HDR Tone</option>
+			<option data-gr="pset=EFFECT COLOR_MODE_CLARITY">Clarity</option>
+			<option data-gr="pset=EFFECT COLOR_MODE_SHINY">Brilliance</option>
+			<option data-gr="pset=EFFECT COLOR_MODE_SLIGHT">Slight</option>
+			<option data-gr="pset=EFFECT COLOR_MODE_MIYABI">Vibrant</option>
+			<option data-gr="pset=EFFECT COLOR_MODE_BRIGHT">Bright</option>
+			<option data-gr="pset=EFFECT COLOR_MODE_PORTRAIT">Portrait</option>
+		</select>
+	</div>
+	<div class="ui-block-b">
+		<label>Image</label>
+		<select name="imageSetting" data-icon="false" data-mini="true">
+			<option></option>
+			<option data-gr="pset=IMAGE_SETTINGS COLOR_MODE_VIVID">Vivid</option>
+			<option data-gr="pset=IMAGE_SETTINGS COLOR_MODE_STANDARD">Standard</option>
+			<option data-gr="pset=IMAGE_SETTINGS COLOR_MODE_CUSTOM1">Setting 1</option>
+			<option data-gr="pset=IMAGE_SETTINGS COLOR_MODE_CUSTOM2">Setting 2</option>
+		</select>
+	</div>
+	<div class="ui-block-c">
+		<label>DR</label>
+		<select name="dynamicRangeCompensation" data-icon="false" data-mini="true">
+			<option></option>
+			<option data-gr="pset=DYN_RANGE_COMP DYNAMIC_RANGE_OFF">Off</option>
+			<option data-gr="pset=DYN_RANGE_COMP DYNAMIC_RANGE_AUTO">Auto</option>
+			<option data-gr="pset=DYN_RANGE_COMP DYNAMIC_RANGE_WEAK">Weak</option>
+			<option data-gr="pset=DYN_RANGE_COMP DYNAMIC_RANGE_MEDIUM">Medium</option>
+			<option data-gr="pset=DYN_RANGE_COMP DYNAMIC_RANGE_STRONG">Strong</option>
+		</select>
+	</div>
+</div>
+			</div>
+			<div class="ui-grid-solo">
+				<div class="ui-block-a"><a href="#" class="ui-btn ui-corner-all gr-commit" data-rel="close">Done</a></div>
+				<div class="ui-block-a"><a href="#" class="ui-btn ui-corner-all" data-rel="close">Cancel</a></div>
+			</div>
+		</form>
+	</div><!-- /panel -->
+
+</div><!-- /page gr-home -->
+
+<!-- Start of page: #gr-viewer -->
+<div data-role="page" id="gr-viewer" class="viewer-page gr-page-center" data-theme="a" data-title="Viewer">
+
+	<div data-role="header" class="gr-theme">
+		<h1><i class="fa fa-youtube-play"></i> Viewer</h1>
+		<a href="#gr-menu" class="ui-btn-left ui-btn ui-corner-all ui-btn-icon-notext ui-icon-bars">Menu</a>
+		<a href="#" class="ui-btn-right ui-btn ui-corner-all ui-btn-icon-notext ui-icon-refresh gr-refresh">Refresh</a>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<ul id="gr-folderview" data-role="listview">
+			<li><a href="#gr-viewer-gallery" fd="today[0]" title="Today's Shots" data-transition="slidefade" class="gr-link-bottom"><img src="fallback/DCIM/100RICOH/R0000001.JPG" class="gr-thumb gr-thumb-mini" alt="100RICOH"><h2>Today's Shots</h2><p>Latest: 0:00 AM</p><span class="ui-li-count">1</span></a></li>
+			<li data-role="list-divider">FOLDERS</li>
+			<li><a href="#gr-viewer-gallery" fd="100RICOH[0]" title="100RICOH" data-transition="slidefade" class="gr-link-bottom"><img src="fallback/DCIM/100RICOH/R0000001.JPG" class="gr-thumb gr-thumb-mini" alt="100RICOH"><h2>100RICOH</h2><p>R0000001</p><span class="ui-li-count">1</span></a></li>
+			<li><a href="#gr-viewer-gallery" fd="101RICOH[0]" title="101RICOH (1/2)" data-transition="slidefade" class="gr-link-bottom"><img src="fallback/DCIM/100RICOH/R0000001.JPG" class="gr-thumb gr-thumb-mini" alt="101RICOH (1/2)"><h2>101RICOH (1/2)</h2><p>R0000001 - R00000100</p><span class="ui-li-count">100</span></a></li>
+			<li><a href="#gr-viewer-gallery" fd="101RICOH[1]" title="101RICOH (2/2)" data-transition="slidefade" class="gr-link-bottom"><img src="fallback/DCIM/100RICOH/R0000001.JPG" class="gr-thumb gr-thumb-mini" alt="101RICOH (2/2)"><h2>101RICOH (2/2)</h2><p>R0000101 - R00000110</p><span class="ui-li-count">10</span></a></li>
+		</ul>
+	</div><!-- /content -->
+
+</div><!-- /page gr-viewer -->
+
+<!-- Start of page: #gr-viewer-gallery -->
+<div data-role="page" id="gr-viewer-gallery" class="gr-page-center" data-theme="a">
+
+	<div data-role="header" class="gr-theme" data-title="100RICOH">
+		<h1>100RICOH</h1>
+		<div class="gr-not-on-select">
+			<a href="#gr-viewer" data-rel="back" class="ui-btn-left ui-btn ui-corner-all ui-btn-icon-left ui-icon-carat-l" data-transition="slidefade" data-direction="reverse">Back</a>
+			<a href="#gr-gallery-action" data-rel="popup" data-position-to="origin" data-transition="fade" class="ui-btn-right ui-btn ui-corner-all ui-btn-icon-notext ui-icon-action gr-action">Download</a>
+		</div>
+		<div class="gr-on-select">
+			<div class="ui-btn-left gr-on-select" data-gr-gallery-action="select">
+				<a href="#" class="ui-btn ui-corner-all ui-btn-icon-left ui-icon-arrow-d gr-commit">Save</a>
+			</div>
+			<div class="ui-btn-right">
+				<a href="#" class="ui-btn ui-corner-all gr-cancel">Done</a>
+			</div>
+		</div>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<div class="gr-gallery-header gr-on-select" data-gr-gallery-action="download">
+			<p>Tap image to download.</p>
+		</div>
+		<div class="gr-gallery-header gr-on-select" data-gr-gallery-action="select">
+			<p>Tap image to select.</p>
+		</div>
+		<div id="gr-no-photos" style="display: none;">
+			<p>No Photos</p>
+		</div>
+		<div id="gr-thumbview-holder">
+			<ul class="gr-thumbview-navbar">
+				<li><a href="#" class="gr-prev"><i class="fa fa-chevron-left"></i> Prev</a>
+				<li><a href="#" class="gr-next">Next <i class="fa fa-chevron-right"></i></a>
+				<li class="gr-on-select" data-gr-gallery-action="select">
+					<a href="#" class="gr-select-all">Select All</a>
+				</li>
+				<li class="gr-thumbview-navbar-right"><a href="#" class="gr-to-bottom">Bottom <i class="fa fa-chevron-down"></i></a>
+			</ul>
+			<ul id="gr-thumbview" class="gr-gallery">
+				<li><a href="fallback/DCIM/100RICOH/R0000001.JPG" title="R0000001.JPG" class="gr-imgbox"><img src="fallback/DCIM/100RICOH/R0000001.JPG" alt="R0000001.JPG" class="gr-thumb"></a>
+				<li><a href="fallback/DCIM/100RICOH/R0000001.JPG" title="R0000002.JPG" class="gr-imgbox"><img src="fallback/DCIM/100RICOH/R0000001.JPG" alt="R0000002.JPG" class="gr-thumb"></a>
+				<li><a href="fallback/DCIM/100RICOH/R0000001.JPG" title="R0000003.JPG" class="gr-imgbox"><img src="fallback/DCIM/100RICOH/R0000001.JPG" alt="R0000003.JPG" class="gr-thumb"></a>
+				<li><a href="fallback/DCIM/100RICOH/R0000001.JPG" title="R0000004.JPG" class="gr-imgbox"><img src="fallback/DCIM/100RICOH/R0000001.JPG" alt="R0000004.JPG" class="gr-thumb"></a>
+				<li><a href="fallback/DCIM/100RICOH/R0000001.JPG" title="R0000005.JPG" class="gr-imgbox"><img src="fallback/DCIM/100RICOH/R0000001.JPG" alt="R0000005.JPG" class="gr-thumb"></a>
+				<li><a href="fallback/DCIM/100RICOH/R0000001.JPG" title="R0000006.JPG" class="gr-imgbox"><img src="fallback/DCIM/100RICOH/R0000001.JPG" alt="R0000006.JPG" class="gr-thumb"></a>
+				<li><a href="fallback/DCIM/100RICOH/R0000001.JPG" title="R0000007.JPG" class="gr-imgbox"><img src="fallback/DCIM/100RICOH/R0000001.JPG" alt="R0000007.JPG" class="gr-thumb"></a>
+				<li><a href="fallback/DCIM/100RICOH/R0000001.JPG" title="R0000008.JPG" class="gr-imgbox"><img src="fallback/DCIM/100RICOH/R0000001.JPG" alt="R0000008.JPG" class="gr-thumb"></a>
+			</ul>
+			<ul class="gr-thumbview-navbar">
+				<li><a href="#" class="gr-prev gr-link-bottom"><i class="fa fa-chevron-left"></i> Prev</a>
+				<li><a href="#" class="gr-next gr-link-bottom">Next <i class="fa fa-chevron-right"></i></a>
+				<li class="gr-on-select" data-gr-gallery-action="select">
+					<a href="#" class="gr-select-all">Select All</a>
+				</li>
+				<li class="gr-thumbview-navbar-right"><a href="#" class="gr-to-top">Top <i class="fa fa-chevron-up"></i></a>
+			</ul>
+		</div>
+	
+	</div><!-- /content -->
+
+	<div data-role="popup" id="gr-gallery-action" class="ui-mini gr-theme">
+		<ul data-role="listview">
+			<li data-icon="false"><a href="#" data-rel="back" class="gr-act-download" data-gr-download-size="view">Download VGA</a></li>
+			<li data-icon="false"><a href="#" data-rel="back" class="gr-act-download" data-gr-download-size="full">Download Original</a></li>
+		</ul>
+	</div><!-- /popup gr-gallery-action -->
+
+</div><!-- /page gr-viewer-gallery -->
+
+<!-- Start of page: #gr-presets -->
+<div data-role="page" id="gr-presets" class="gr-page gr-theme" data-title="Presets">
+
+	<div data-role="header">
+		<h1><i class="fa fa-star"></i> Presets</h1>
+		<a href="#gr-menu" class="ui-btn-left ui-btn ui-corner-all ui-btn-icon-notext ui-icon-bars">Menu</a>
+		<a href="#" class="ui-btn-right ui-btn ui-corner-all ui-btn-icon-notext ui-icon-refresh gr-refresh">Refresh</a>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+
+		<div id="gr-miniview-holder">
+			<ul id="gr-miniview-single">
+				<li><a data-gr="cmd=bnull"><img src="fallback/liveview.jpg"></a>
+			</ul>
+			<ul id="gr-miniview-multi">
+				<li><a data-gr="cmd=bnull"><img src="fallback/liveview.jpg"></a>
+				<li><a data-gr="cmd=bnull"><img class="gr-reflect-lr" src="fallback/liveview.jpg"></a>
+			</ul>
+		</div>
+
+		<h3>Shooting</h3>
+		<div data-role="controlgroup">
+			<a class="ui-btn ui-corner-all gr-toggle-btn" data-gr-on="pset=SELFTIMER SELF_MODE_CUSTOM&pset=SELF_NUM_PICS 1&pset=SELF_INTVL 5&cmd=brl" data-gr-off="pset=SELFTIMER SELF_MODE_OFF&cmd=mode refresh">Selftimer</a>
+		</div>
+		<div data-role="controlgroup">
+			<a class="ui-btn ui-corner-all gr-toggle-btn" data-gr-on="pset=CONT_MODE CONT_MODE_CONTINUOUS&cmd=brl 0 1 2" data-gr-off="cmd=brl 0&pset=CONT_MODE CONT_MODE_SINGLE&cmd=mode refresh">Continuous Shooting</a>
+			<a class="ui-btn ui-corner-all gr-toggle-btn" data-gr-on="cmd=intvlshot start&cmd=brl" data-gr-off="cmd=intvlshot stop">Interval Shooting</a>
+			<a class="ui-btn ui-corner-all gr-toggle-btn" data-gr-on="cmd=intvlcomp start&cmd=brl" data-gr-off="cmd=intvlcomp stop">Interval Composite</a>
+		</div>
+		<h3>Playback</h3>
+		<div data-role="controlgroup">
+			<a class="ui-btn ui-corner-all gr-toggle-btn" data-gr-on="cmd=slideshow start" data-gr-off="cmd=slideshow stop">Slideshow</a>
+		</div>
+		<h3>System</h3>
+		<div data-role="controlgroup">
+			<a class="ui-btn ui-corner-all" data-gr="cmd=sleep">Sleep</a>
+			<a class="ui-btn ui-corner-all" data-gr="cmd=shutdown">Shutdown</a>
+			<a class="ui-btn ui-corner-all" data-gr="cmd=restart">Restart</a>
+		</div>
+
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<p class="gr-copyright-text"></p>
+	</div><!-- /footer -->
+
+</div><!-- /page gr-presets -->
+
+<!-- Start of page: #gr-utils -->
+<div data-role="page" id="gr-utils" class="gr-page gr-theme" data-title="Utilities">
+
+	<div data-role="header">
+		<h1><i class="fa fa-briefcase"></i> Utilities</h1>
+		<a href="#gr-menu" class="ui-btn-left ui-btn ui-corner-all ui-btn-icon-notext ui-icon-bars">Menu</a>
+		<a href="#" class="ui-btn-right ui-btn ui-corner-all ui-btn-icon-notext ui-icon-refresh gr-refresh">Refresh</a>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+
+		<h3>About My GR</h3>
+		<table data-role="table" id="gr-info" data-mode="columntoggle" class="table-stripe">
+			<tbody>
+				<tr><th>Storage</th><td>1.00 GB free, 8.00 GB total</td></tr>
+				<tr><th>Battery</th><td>Full</td></tr>
+				<tr><th>Clock</th><td>12/31/2015 12:00:00</td></tr>
+				<tr><th>Model</th><td>GR 1.00</td></tr>
+			</tbody>
+		</table>
+		<a href="#" id="gr-clock" class="ui-btn ui-corner-all"><i class="fa fa-clock-o fa-lg"></i> Sync Clock</a>
+
+		<div class="gr-not-on-mini">
+			<h3>Network Settings</h3>
+			<a href="#gr-wifi" class="ui-btn ui-corner-all ui-btn-icon-right ui-icon-carat-l">Wi-Fi</a>
+			<a href="#gr-security" class="ui-btn ui-corner-all ui-btn-icon-right ui-icon-carat-l">Security</a>
+			<h3></h3>
+			<a href="#gr-reset" class="ui-btn ui-corner-all ui-btn-icon-right ui-icon-carat-l">Reset GR</a>
+		</div>
+
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<p class="gr-copyright-text"></p>
+	</div><!-- /footer -->
+
+	<div data-role="panel" id="gr-wifi" class="gr-panel" data-position="right" data-display="push" data-position-fixed="true">
+		<h3>Wi-Fi Settings</h3>
+		<form>
+			<label for="gr-wifi-ssid">SSID:</label>
+			<input type="text" name="wifiSSID" id="gr-wifi-ssid" value="RICOH_ABCD" data-clear-btn="true">
+			<label for="gr-wifi-password">Password:</label>
+			<input type="text" name="wifiPassword" id="gr-wifi-password" placeholder="Enter password" autocomplete="off" data-clear-btn="true">
+			<div class="gr-not-on-restrict-wifi">
+				<label for="gr-wifi-channel">Channel:</label>
+				<select id="gr-wifi-channel" name="wifiChannel">
+					<option value="1" selected>1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+				</select>
+			</div>
+			<button type="submit" class="ui-btn ui-corner-all gr-commit">Save</button>
+		</form>
+		<p></p>
+		<a href="#" class="ui-btn ui-corner-all" data-rel="close">Close</a>
+	</div><!-- /panel gr-wifi-config -->
+
+	<div data-role="panel" id="gr-security" class="gr-panel" data-position="right" data-display="push" data-position-fixed="true">
+		<h3><i class="fa fa-exclamation-triangle"></i> Security Options</h3>
+		<p>This customizes security settings for Web App developers.</p>
+		<form id="gr-origin">
+			<label for="gr-origin">Allow Access-Control From:</label>
+			<input type="text" name="corsOrigin" id="gr-origin" value="grblog.jp" data-clear-btn="true">
+			<p></p>
+			<input type="text" name="corsPasscode" id="gr-passcode" placeholder="Enter passcode" data-clear-btn="true">
+			<p class="gr-note">The passcode is displayed on Wi-Fi Information page on your GR.</p>
+			<button type="submit" class="ui-btn ui-corner-all gr-commit">Save</button>
+		</form>
+		<p></p>
+		<a href="#" class="ui-btn ui-corner-all" data-rel="close">Close</a>
+	</div><!-- /panel gr-security -->
+
+	<div data-role="panel" id="gr-reset" class="gr-panel" data-position="right" data-display="push" data-position-fixed="true">
+		<h3><i class="fa fa-exclamation-triangle"></i> Reset GR Settings</h3>
+		<p>This resets settings to factory defaults.</p>
+		<a href="#" class="ui-btn ui-corner-all" data-gr="cmd=reset camera">Reset All Settings</a>
+		<div data-role="controlgroup">
+			<a href="#" class="ui-btn ui-corner-all" data-gr="cmd=reset shooting">Reset Shooting Settings</a>
+			<a href="#" class="ui-btn ui-corner-all" data-gr="cmd=reset network">Reset Network Settings</a>
+			<a href="#" class="ui-btn ui-corner-all" data-gr="cmd=reset custom">Reset Key Custom Options</a>
+		</div>
+		<p></p>
+		<a href="#" class="ui-btn ui-corner-all" data-rel="close">Cancel</a>
+	</div><!-- /panel gr-reset -->
+
+</div><!-- /page gr-utils -->
+
+<!-- Start of page: #gr-config -->
+<div data-role="page" id="gr-config" class="gr-page gr-theme" data-title="Configuration">
+
+	<div data-role="header">
+		<h1><i class="fa fa-cog"></i> Configuration</h1>
+		<a href="#gr-menu" class="ui-btn-left ui-btn ui-corner-all ui-btn-icon-notext ui-icon-bars">Menu</a>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+
+		<h3 class="gr-not-on-mini">Commander Options</h3>
+		<fieldset data-role="controlgroup" class="gr-not-on-mini">
+			<legend>Touch Liveview To:</legend>
+			<input id="gr-touch-focus" type="radio" name="lvTouch" value="focus" checked="checked" class="gr-option">
+			<label for="gr-touch-focus">Focus</label>
+			<input id="gr-touch-capture" type="radio" name="lvTouch" value="capture" class="gr-option">
+			<label for="gr-touch-capture">Capture</label>
+		</fieldset>
+
+		<h3>Viewer Options</h3>
+		<fieldset data-role="controlgroup">
+			<legend>File Format:</legend>
+			<label for="gr-view-jpg">JPEG</label>
+			<input type="checkbox" id="gr-view-jpg" name="viewJPG" value="jpg" checked="checked" class="gr-option">
+			<label for="gr-view-dng">RAW (DNG)</label>
+			<input type="checkbox" id="gr-view-dng" name="viewDNG" value="dng" checked="checked" class="gr-option">
+			<label for="gr-view-mov">Movie (MOV)</label>
+			<input type="checkbox" id="gr-view-mov" name="viewMOV" value="mov" checked="checked" class="gr-option">
+		</fieldset>
+
+		<h3>Download Options</h3>
+		<fieldset data-role="controlgroup">
+			<legend>Download Size:</legend>
+			<input id="gr-download-select" type="radio" name="dlSize" value="select" class="gr-option">
+			<label for="gr-download-select">Selectable</label>
+			<input id="gr-download-vga" type="radio" name="dlSize" value="vga" class="gr-option">
+			<label for="gr-download-vga">VGA Size</label>
+			<input id="gr-download-original" type="radio" name="dlSize" value="original" checked="checked" class="gr-option">
+			<label for="gr-download-original">Original Size</label>
+		</fieldset>
+		<label for="gr-gallery-action-download">Multi-Select:</label>
+		<select data-role="slider" id="gr-gallery-action-download" name="galleryAction" class="gr-option">
+			<option value="download">Off</option>
+			<option value="select">On</option>
+		</select>
+
+		<h3>App Settings</h3>
+		<label for="gr-ui-theme">Color Scheme:</label>
+		<select id="gr-ui-theme" name="uiTheme" class="gr-option">
+			<option value="a">Light</option>
+			<option value="b" selected>Dark</option>
+		</select>
+		<p></p>
+		<a href="#" id="gr-demo" class="ui-btn ui-corner-all gr-not-on-mini">Demo Mode</a>
+		<a href="#" id="gr-app-reset" class="ui-btn ui-corner-all">Reset GR Remote</a>
+		<p></p>
+		<a href="#gr-config-experimental" class="ui-btn ui-corner-all ui-btn-icon-right ui-icon-carat-l">Experimental</a>
+		<div class="gr-on-develop">
+			<a href="#gr-config-advanced" class="ui-btn ui-corner-all ui-btn-icon-right ui-icon-carat-l">Advanced</a>
+		</div>
+
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<p class="gr-copyright-text"></p>
+	</div><!-- /footer -->
+
+	<div data-role="panel" id="gr-config-advanced" class="gr-panel" data-position="right" data-display="push" data-position-fixed="true">
+		<h3>Advanced Options</h3>
+		<fieldset data-role="controlgroup">
+			<legend>GR Location:</legend>
+			<input id="gr-location-default" type="radio" name="grLocation" value="default" checked="checked" class="gr-option">
+			<label for="gr-location-default">Default (192.168.0.1)</label>
+			<input id="gr-location-same-origin" type="radio" name="grLocation" value="same-origin" class="gr-option">
+			<label for="gr-location-same-origin">Same as App Location</label>
+			<input id="gr-location-custom" type="radio" name="grLocation" value="custom" class="gr-option">
+			<label for="gr-location-custom">Custom</label>
+		</fieldset>
+		<input type="url" id="gr-location-domain" name="grLocationDomain" value="http://192.168.0.1" data-clear-btn="false" class="gr-option">
+		<p></p>
+		<label for="gr-develop-mode">Developer Mode</label>
+		<input type="checkbox" id="gr-develop-mode" name="developMode" value="on" class="gr-option">
+		<p></p>
+		<a href="#" class="ui-btn ui-corner-all" data-rel="close">Close</a>
+	</div><!-- /panel gr-config-advanced -->
+
+	<div data-role="panel" id="gr-config-experimental" class="gr-panel" data-position="right" data-display="push" data-position-fixed="true">
+		<h3>Experimental Features</h3>
+		<!-- @todo
+		<fieldset data-role="controlgroup">
+			<label for="gr-experimental-abc">ABC</label>
+			<input type="checkbox" id="gr-experimental-abc" name="abc" value="on" class="gr-option">
+		</fieldset>
+		-->
+		<fieldset data-role="controlgroup">
+			<legend>Download Image in Chrome:</legend>
+			<input id="gr-download-direct" type="radio" name="dlMethod" value="direct" checked="checked" class="gr-option">
+			<label for="gr-download-direct">Directly</label>
+			<input id="gr-download-tab" type="radio" name="dlMethod" value="tab" class="gr-option">
+			<label for="gr-download-tab">In New Tab</label>
+		</fieldset>
+		<a href="#" class="ui-btn ui-corner-all" data-rel="close">Close</a>
+	</div><!-- /panel gr-config-experimental -->
+
+</div><!-- /page gr-config -->
+
+<!-- Start of page: #gr-about -->
+<div data-role="page" id="gr-about" class="gr-page gr-page-center" data-theme="b" data-title="About GR Remote">
+
+	<div data-role="header">
+		<h1>About GR Remote</h1>
+		<a href="#gr-menu" class="ui-btn-left ui-btn ui-corner-all ui-btn-icon-notext ui-icon-bars">Menu</a>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+
+		<div id="gr-copyright">
+			<h2><img src="img/bod_img_02.png" alt="The GR"></h2>
+			<h3>GR <strong>Remote</strong> </span><span class="gr-app-version">0.0.0</span></h3>
+			<p>Copyright © 2015<br>RICOH IMAGING COMPANY, LTD.</p>
+		</div>
+		<div id="gr-versions" class="gr-not-on-mini">
+			<a href="../versions.html" target="_blank">Old Versions</a><br>
+			<a href="../custom/versions.html" target="_blank">Custom Versions</a>
+		</div>
+		<div id="gr-license">
+			<h3>Thanks to (*Licensed under):</h3>
+			<p>
+				jQuery Mobile (*MIT)<br>
+				PhotoSwipe (*MIT)<br>
+				Font Awesome (*SIL OFL 1.1, *MIT)<br>
+				Open Sans (*Apache 2.0)
+			</p>
+			<p>
+				<span class="gr-on-develop">RC2013 &amp; RC2015<br></span>
+				GR BLOG
+			</p>
+			<p>
+				GR
+			</p>
+		</div>
+	</div><!-- /content -->
+
+</div><!-- /page gr-about -->
+
+<!-- Start of page: #gr-develop -->
+<div data-role="page" id="gr-develop" class="gr-page gr-theme" data-title="Develop">
+
+	<div data-role="header">
+		<h1><i class="fa fa-wrench"></i> Develop</h1>
+		<a href="#gr-menu" class="ui-btn-left ui-btn ui-corner-all ui-btn-icon-notext ui-icon-bars">Menu</a>
+		<a href="#" class="ui-btn-right ui-btn ui-corner-all ui-btn-icon-notext ui-icon-refresh gr-refresh">Refresh</a>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+
+		<a href="#gr-manual" class="ui-btn ui-corner-all ui-btn-icon-right ui-icon-carat-l">Manual Command</a>
+		<div data-role="controlgroup">
+			<a class="ui-btn ui-corner-all" data-gr="cmd=sleep">Sleep</a>
+			<a class="ui-btn ui-corner-all" data-gr="cmd=shutdown">Shutdown</a>
+			<a class="ui-btn ui-corner-all" data-gr="cmd=restart">Restart</a>
+			<a class="ui-btn ui-corner-all" data-gr="cmd=restart 900">Restart After 15 Minutes</a>
+		</div>
+
+		<h3>Test Cases</h3>
+		<select id="gr-test" name="testCase" class="gr-option">
+			<option value="quickCheck">Quick Check</option>
+		</select>
+		<a href="#" id="gr-test-start" class="ui-btn ui-corner-all">Test</a>
+
+		<h3>API Sets</h3>
+		<label for="gr-api-command">Command API:</label>
+		<select id="gr-api-command" name="commandAPI" class="gr-option">
+			<option value="gr">GR Enhanced</option>
+			<option value="ricoh">RICOH Standard</option>
+		</select>
+		<label for="gr-api-view">View API:</label>
+		<select id="gr-api-view" name="viewAPI" class="gr-option">
+			<option value="gr">GR Enhanced</option>
+			<option value="ricoh">RICOH Standard</option>
+		</select>
+		<label for="gr-api-view">Liveview Style:</label>
+		<select id="gr-api-liveview" name="liveviewAPI" class="gr-option">
+			<option value="screen">Screen View</option>
+			<option value="capture">Capturing View</option>
+			<option value="none">None</option>
+		</select>
+		<label for="gr-api-simulation">Camera Simulation:</label>
+		<select data-role="slider" id="gr-api-simulation" name="apiSimulation" class="gr-option">
+			<option value="off">Off</option>
+			<option value="on">On</option>
+		</select>
+
+		<h3>App Config</h3>
+		<label for="gr-log">Debug Mode:</label>
+		<select data-role="slider" id="gr-log" name="debugMode" class="gr-option">
+			<option value="off">Off</option>
+			<option value="on">On</option>
+		</select>
+		<label for="gr-landscape">Landscape Layout:</label>
+		<select data-role="slider" id="gr-landscape" name="landscapeLayout" class="gr-option">
+			<option value="off">Off</option>
+			<option value="on">On</option>
+		</select>
+		<label for="gr-standalone">Standalone Mode:</label>
+		<select data-role="slider" id="gr-standalone" name="standaloneMode" class="gr-option">
+			<option value="off">Off</option>
+			<option value="on">On</option>
+		</select>
+		<label for="gr-app-mini">Mini:</label>
+		<select data-role="slider" id="gr-app-mini" name="miniMode" class="gr-option">
+			<option value="off">Off</option>
+			<option value="on">On</option>
+		</select>
+		<label for="gr-disable-ping">Disable Ping</label>
+		<input type="checkbox" id="gr-disable-ping" name="disablePing" value="on" class="gr-option">
+
+		<fieldset data-role="controlgroup">
+			<legend>GR Info:</legend>
+			<input id="gr-sysinfo-auto" type="radio" name="grSysInfo" value="auto" checked="checked" class="gr-option">
+			<label for="gr-sysinfo-auto">Auto Detect</label>
+			<input id="gr-sysinfo-manual" type="radio" name="grSysInfo" value="manual" class="gr-option">
+			<label for="gr-sysinfo-manual">Manual</label>
+		</fieldset>
+		<select id="gr-sysinfo-model" name="grModel" class="gr-option">
+			<option value="">Unknown</option>
+			<option value="GR II" selected>GR II</option>
+		</select>
+		<input id="gr-sysinfo-version" type="text" name="grVersion" value="1.00" autocapitalize="off" autocorrect="off" data-clear-btn="true" class="gr-option">
+
+		<h3>Icon Image</h3>
+		<div id="gr-icon" class="ui-grid-a gr-grid">
+			<div class="ui-block-a">
+				<figure class="ui-body ui-corner-all gr-theme">
+					<img src="img/icon.png" class="gr-icon-image">
+					<figcaption>Active</figcaption>
+				</figure>
+			</div>
+			<div class="ui-block-b">
+				<figure class="ui-body ui-corner-all gr-theme">
+					<div class="gr-icon-image"><span id="gr-css-icon"></span></div>
+					<figcaption>Template</figcaption>
+				</figure>
+			</div>
+		</div>
+
+		<h3></h3>
+		<a href="#" class="ui-btn ui-corner-all gr-uc">Coming Soon!</a>
+
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<p class="gr-copyright-text"></p>
+	</div><!-- /footer -->
+
+	<div data-role="panel" id="gr-manual" class="gr-panel" data-position="right" data-display="push" data-position-fixed="true">
+		<h3>Manual Command</h3>
+
+		<table data-role="table" id="gr-result" data-mode="columntoggle" class="table-stripe">
+			<thead>
+				<tr><th>Field</th><th>Value</th></tr>
+			</thead>
+			<tbody>
+				<tr><th>errCode</th><td></td></tr>
+				<tr><th>errMsg</th><td></td></tr>
+				<tr><th>retCode</th><td></td></tr>
+				<tr><th>retStr</th><td></td></tr>
+			</tbody>
+		</table>
+
+		<form id="gr-command">
+			<input type="text" name="cmd" value='gprint 3 5 "BE YOUR EYES"' autocapitalize="off" autocorrect="off" data-clear-btn="true">
+			<input type="submit" value="Transmit">
+		</form>
+		<p></p>
+		<a href="#" class="ui-btn ui-corner-all" data-rel="close">Close</a>
+
+	</div><!-- /panel gr-manual -->
+
+</div><!-- /page gr-develop -->
+
+<!-- Start of page: #gr-reference -->
+<div data-role="page" id="gr-reference" class="gr-page gr-theme" data-title="Reference">
+
+	<div data-role="header">
+		<h1><i class="fa fa-lightbulb-o"></i> Reference</h1>
+		<a href="#gr-menu" class="ui-btn-left ui-btn ui-corner-all ui-btn-icon-notext ui-icon-bars">Menu</a>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<h3>Reference</h3>
+		<p><a href="http://api.jquerymobile.com">jQuery Mobile API Documentation</a></p>
+		<p><a href="http://demos.jquerymobile.com/1.4.5/">jQuery Mobile Demos</a></p>
+		<p><a href="http://api.jquery.com">jQuery API Documentation</a></p>
+		<p><a href="http://fortawesome.github.io/Font-Awesome/icons/">Font Awesome Icons</a></p>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<p class="gr-copyright-text"></p>
+	</div><!-- /footer -->
+
+</div><!-- /page gr-reference -->
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+	<!-- Background of PhotoSwipe. 
+		 It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+	<!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+		<!-- Container that holds slides. 
+			PhotoSwipe keeps only 3 of them in the DOM to save memory.
+			Don't modify these 3 pswp__item elements, data is added later on. -->
+		<div class="pswp__container">
+			<div class="pswp__item"></div>
+			<div class="pswp__item"></div>
+			<div class="pswp__item"></div>
+		</div>
+
+		<!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+		<div class="pswp__ui pswp__ui--hidden">
+
+			<div class="pswp__top-bar">
+
+				<!--  Controls are self-explanatory. Order can be changed. -->
+				
+				<div class="pswp__counter"></div>
+
+				<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+				<button class="pswp__button pswp__button--share" title="Share"></button>
+
+				<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+				<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+				<!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+				<!-- element will get class pswp__preloader--active when preloader is running -->
+				<div class="pswp__preloader">
+					<div class="pswp__preloader__icn">
+					  <div class="pswp__preloader__cut">
+					    <div class="pswp__preloader__donut"></div>
+					  </div>
+					</div>
+				</div>
+			</div>
+
+	        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+				<div class="pswp__share-tooltip"></div> 
+	        </div>
+
+			<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+			</button>
+			
+			<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+			</button>
+
+			<div class="pswp__caption">
+				<div class="pswp__caption__center"></div>
+			</div>
+
+	    </div>
+
+	</div>
+
+</div>
+
+<!--<![endif]-->
+
+
+</body>
+</html>
