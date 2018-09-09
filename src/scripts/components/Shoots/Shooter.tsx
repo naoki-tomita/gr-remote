@@ -1,20 +1,21 @@
 import * as React from "react";
-import IconButton from "@material-ui/core/IconButton";
-import PhotoCamera from "@material-ui/icons/PhotoCamera";
-import { api } from "../../apis";
+
+import { ApiButton } from "../ApiButton";
+import { Shutter } from "./Shutter";
 
 export class Shooter extends React.Component {
   render() {
     return (
       <>
-        <IconButton color="primary" onClick={this.handleShoot}>
-          <PhotoCamera />
-        </IconButton>
+        <Shutter />
+        <ApiButton url="/v1/camera/shoot" formData={{ af: "camera" }}>
+          Shoot
+        </ApiButton>
+        <ApiButton url="/v1/camera/shoot/start">ShootStart</ApiButton>
+        <ApiButton url="/v1/camera/shoot/finish">ShootFinish</ApiButton>
+        <ApiButton url="/v1/lens/focus/lock">FocusLock</ApiButton>
+        <ApiButton url="/v1/lens/focus/unlock">FocusUnlock</ApiButton>
       </>
     );
   }
-
-  handleShoot = async () => {
-    await api.shoot();
-  };
 }

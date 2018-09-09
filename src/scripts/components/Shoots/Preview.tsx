@@ -1,26 +1,39 @@
 import * as React from "react";
 import styled from "styled-components";
-import Paper from "@material-ui/core/Paper";
-import Grid from "@material-ui/core/Grid";
-
-import { Shooter } from "./Shooter";
+import { api } from "../../apis";
 
 const FullWidthImage = styled.img`
+  display: block;
   width: 100%;
-  max-width: 640px;
+  max-width: 480px;
 `;
 
-export const Preview: React.StatelessComponent = () => {
-  return (
-    <>
-      <Paper>
-        <FullWidthImage src="http://192.168.0.1/v1/display" />
-      </Paper>
-      <Grid container spacing={8}>
-        <Grid item xs={4}>
-          <Shooter />
-        </Grid>
-      </Grid>
-    </>
+const Container = styled.div`
+  position: relative;
+`;
+
+const ThinSheet = styled.div`
+  display: inline-block;
+`;
+
+const focusLock: React.MouseEventHandler<HTMLDivElement> = e => {
+  const x = Math.round(
+    ((e.clientX - (e.target as any).x) / (e.target as any).clientWidth) * 100,
   );
+  const y = Math.round(
+    ((e.clientY - (e.target as any).y) / (e.target as any).clientHeight) * 100,
+  );
+  api.focus.lock({ x, y });
 };
+
+const FocusLocker: React.StatelessComponent = ({ children }) => (
+  <ThinSheet onClick={focusLock}>{children}</ThinSheet>
+);
+
+export const Preview: React.StatelessComponent = () => (
+  <Container>
+    <FocusLocker>
+      <FullWidthImage src="http://192.168.0.1/v1/display" />
+    </FocusLocker>
+  </Container>
+);

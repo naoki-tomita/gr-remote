@@ -22,6 +22,7 @@ const config: Configuration = {
       },
     ],
   },
+  target: "electron-renderer",
 };
 
 export default config;
