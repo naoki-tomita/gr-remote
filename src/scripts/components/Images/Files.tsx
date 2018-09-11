@@ -8,7 +8,6 @@ interface Props {
 }
 
 function handleSelect(file: File) {
-  console.log(file);
   storage.currentFile = file;
 }
 

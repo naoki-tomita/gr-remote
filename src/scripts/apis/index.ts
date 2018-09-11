@@ -1,5 +1,6 @@
 import { fetch } from "../utils/AvoidableFetch";
 import { Directory, File } from "../models/States/Storage";
+import { DeviceConstants } from "../models/States/Device";
 
 const ROOT_DOMAIN = "http://192.168.0.1";
 
@@ -86,9 +87,7 @@ export const api = {
       return f;
     },
     async dirs(): Promise<{ dirs: Directory[] }> {
-      const response = await api.get({
-        url: "/_gr/objs",
-      });
+      const response = await api.get({ url: "/_gr/objs" });
       const dirs = response.body.dirs;
       return {
         dirs: dirs.map(
@@ -106,6 +105,12 @@ export const api = {
     },
     viewlUrl(dir: Directory, file: File) {
       return `${this.rawUrl(dir, file)}?size=view`;
+    },
+  },
+  constants: {
+    async device(): Promise<DeviceConstants> {
+      const response = await api.get({ url: "/v1/constants/device" });
+      return response.body;
     },
   },
 };

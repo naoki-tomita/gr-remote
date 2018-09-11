@@ -1,5 +1,6 @@
 import * as React from "react";
+import { Device } from "./Device";
 
 export const Settings: React.StatelessComponent = () => {
-  return <div>Settings</div>;
+  return <Device />;
 };
