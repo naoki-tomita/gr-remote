@@ -3,19 +3,25 @@ import * as React from "react";
 import { ApiButton } from "../ApiButton";
 import { Shutter } from "./Shutter";
 
-export class Shooter extends React.Component {
+interface State {
+  cmd: string;
+}
+
+export class Shooter extends React.Component<{}, State> {
+  state = { cmd: "" };
   render() {
     return (
       <>
+        <input onChange={this.handleChangeText} />
         <Shutter />
-        <ApiButton url="/v1/camera/shoot" formData={{ af: "camera" }}>
+        <ApiButton url="/_gr" formData={{ cmd: this.state.cmd }}>
           Shoot
         </ApiButton>
-        <ApiButton url="/v1/camera/shoot/start">ShootStart</ApiButton>
-        <ApiButton url="/v1/camera/shoot/finish">ShootFinish</ApiButton>
-        <ApiButton url="/v1/lens/focus/lock">FocusLock</ApiButton>
-        <ApiButton url="/v1/lens/focus/unlock">FocusUnlock</ApiButton>
       </>
     );
   }
+
+  handleChangeText: React.ChangeEventHandler<HTMLInputElement> = e => {
+    this.setState({ cmd: e.target.value });
+  };
 }
